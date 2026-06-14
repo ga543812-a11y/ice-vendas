@@ -1,0 +1,2682 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>❄ ICE VENDAS | TECH &amp; CYBER SECURITY</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Share+Tech+Mono&amp;family=Bebas+Neue&amp;display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --ice-white: #E8F4FD;
+    --ice-blue: #A8D8EA;
+    --cyber-cyan: #00E5FF;
+    --cold-blue: #0D47A1;
+    --deep-frost: #050D1A;
+    --mid-dark: #0A1628;
+    --panel: #0F1E35;
+    --panel-2: #132540;
+    --frost-border: rgba(0, 229, 255, 0.2);
+    --frost-glow: rgba(0, 229, 255, 0.08);
+    --text-main: #D6EFFF;
+    --text-muted: #7AA8CC;
+    --danger: #FF3860;
+    --success: #00E5FF;
+    --gold: #FFD700;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--deep-frost);
+    color: var(--text-main);
+    font-family: 'Space Grotesk', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── ANIME BG ── */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url('data:image/webp;base64,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');
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+    opacity: 0.07;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── SCANLINE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px);
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(5, 13, 26, 0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--frost-border);
+    padding: 0 2rem;
+  }
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+  .logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.08em;
+    color: var(--cyber-cyan);
+    text-shadow: 0 0 20px rgba(0,229,255,0.5);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .logo span { color: var(--ice-white); }
+  nav { display: flex; gap: 2rem; }
+  nav a {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--cyber-cyan); }
+  .header-cta {
+    background: transparent;
+    border: 1px solid var(--cyber-cyan);
+    color: var(--cyber-cyan);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    padding: 0.4rem 1rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .header-cta:hover {
+    background: var(--cyber-cyan);
+    color: var(--deep-frost);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 60% 40%, rgba(0,100,200,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(0,229,255,0.06) 0%, transparent 60%),
+      linear-gradient(160deg, #050D1A 0%, #0A1628 100%);
+    z-index: 0;
+  }
+
+  /* Grid lines */
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,229,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,229,255,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .eyebrow {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: var(--cyber-cyan);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--cyber-cyan);
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    color: var(--ice-white);
+    margin-bottom: 1.5rem;
+  }
+  h1 .accent { color: var(--cyber-cyan); text-shadow: 0 0 30px rgba(0,229,255,0.4); }
+
+  .hero-desc {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: var(--cyber-cyan);
+    color: var(--deep-frost);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.85rem 2rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+    transition: all 0.2s;
+    display: inline-block;
+  }
+  .btn-primary:hover {
+    background: #fff;
+    box-shadow: 0 0 30px rgba(0,229,255,0.5);
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--text-main);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.85rem 2rem;
+    border: 1px solid rgba(168,216,234,0.3);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--cyber-cyan); color: var(--cyber-cyan); }
+
+  /* Hero right panel */
+  .hero-panel {
+    background: var(--panel);
+    border: 1px solid var(--frost-border);
+    padding: 2rem;
+    position: relative;
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+  }
+  .hero-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--frost-glow);
+    pointer-events: none;
+  }
+  .panel-title {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--cyber-cyan);
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--frost-border);
+  }
+  .stat-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid rgba(0,229,255,0.07);
+    align-items: center;
+  }
+  .stat-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+  .stat-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    color: var(--cyber-cyan);
+    letter-spacing: 0.05em;
+  }
+  .stat-val.green { color: #39FF14; }
+  .stat-val.gold { color: var(--gold); }
+
+  .trust-badge {
+    margin-top: 1.5rem;
+    background: rgba(0,229,255,0.05);
+    border: 1px solid rgba(0,229,255,0.15);
+    padding: 0.8rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+  .trust-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #39FF14;
+    box-shadow: 0 0 8px #39FF14;
+    flex-shrink: 0;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* ── SECTION SHARED ── */
+  section { padding: 6rem 2rem; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--cyber-cyan);
+    margin-bottom: 0.8rem;
+  }
+  h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    letter-spacing: 0.03em;
+    color: var(--ice-white);
+    margin-bottom: 1rem;
+    line-height: 1;
+  }
+  .section-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 520px;
+    margin-bottom: 3rem;
+  }
+
+  /* ── CATEGORIES ── */
+  .categories { background: var(--mid-dark); }
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+  .cat-card {
+    background: var(--panel);
+    border: 1px solid var(--frost-border);
+    padding: 1.4rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .cat-card:hover {
+    border-color: var(--cyber-cyan);
+    background: var(--panel-2);
+    transform: translateY(-3px);
+  }
+  .cat-card.active {
+    border-color: var(--cyber-cyan);
+    background: rgba(0,229,255,0.08);
+  }
+  .cat-icon { font-size: 2rem; margin-bottom: 0.6rem; display: block; }
+  .cat-name {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-main);
+  }
+  .cat-count {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    margin-top: 0.3rem;
+  }
+
+  /* ── PRODUCTS ── */
+  .products { background: var(--deep-frost); }
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .product-card {
+    background: var(--panel);
+    border: 1px solid var(--frost-border);
+    overflow: hidden;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .product-card:hover {
+    border-color: rgba(0,229,255,0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,229,255,0.08);
+  }
+  .product-badge {
+    position: absolute;
+    top: 0.8rem; right: 0.8rem;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    z-index: 2;
+  }
+  .badge-hot { background: var(--danger); color: #fff; }
+  .badge-new { background: var(--cyber-cyan); color: var(--deep-frost); }
+  .badge-top { background: var(--gold); color: var(--deep-frost); }
+
+  .product-thumb {
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .thumb-cyber { background: linear-gradient(135deg, #0D1B2A, #1B2A3D); }
+  .thumb-game  { background: linear-gradient(135deg, #0D1A2D, #1A1035); }
+  .thumb-tool  { background: linear-gradient(135deg, #0A1E1A, #0D2A20); }
+  .thumb-os    { background: linear-gradient(135deg, #1A0D2E, #2A1040); }
+
+  .product-thumb::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(0,229,255,0.03) 10px,
+      rgba(0,229,255,0.03) 11px
+    );
+  }
+
+  .product-body { padding: 1.2rem; flex: 1; display: flex; flex-direction: column; }
+  .product-category {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--cyber-cyan);
+    margin-bottom: 0.4rem;
+  }
+  .product-name {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--ice-white);
+    margin-bottom: 0.4rem;
+    line-height: 1.3;
+  }
+  .product-desc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    flex: 1;
+  }
+  .product-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--frost-border);
+    padding-top: 0.8rem;
+  }
+  .price-old {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-decoration: line-through;
+  }
+  .price-new {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    color: var(--cyber-cyan);
+    letter-spacing: 0.05em;
+  }
+  .btn-buy {
+    background: transparent;
+    border: 1px solid var(--cyber-cyan);
+    color: var(--cyber-cyan);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.45rem 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: inline-block;
+  }
+  .btn-buy:hover {
+    background: var(--cyber-cyan);
+    color: var(--deep-frost);
+  }
+
+  /* ── WHY US ── */
+  .why { background: var(--mid-dark); }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+  .why-card {
+    border-left: 2px solid var(--cyber-cyan);
+    padding: 1.5rem 1.5rem 1.5rem 1.8rem;
+    background: var(--panel);
+    transition: background 0.2s;
+  }
+  .why-card:hover { background: var(--panel-2); }
+  .why-icon { font-size: 1.8rem; margin-bottom: 0.8rem; display: block; }
+  .why-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--ice-white);
+    margin-bottom: 0.5rem;
+  }
+  .why-text { font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials { background: var(--deep-frost); }
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .testi-card {
+    background: var(--panel);
+    border: 1px solid var(--frost-border);
+    padding: 1.8rem;
+    position: relative;
+  }
+  .testi-card::before {
+    content: '"';
+    position: absolute;
+    top: 0.5rem; left: 1.2rem;
+    font-size: 4rem;
+    color: rgba(0,229,255,0.1);
+    font-family: Georgia, serif;
+    line-height: 1;
+  }
+  .testi-text {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+    font-style: italic;
+  }
+  .testi-author { display: flex; align-items: center; gap: 0.8rem; }
+  .testi-avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--cyber-cyan), var(--cold-blue));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: var(--deep-frost);
+    flex-shrink: 0;
+  }
+  .testi-name {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--ice-white);
+  }
+  .testi-role {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--cyber-cyan);
+  }
+  .stars { color: var(--gold); font-size: 0.75rem; margin-bottom: 0.8rem; }
+
+  /* ── HOW TO BUY ── */
+  .how { background: var(--mid-dark); }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; position: relative; }
+  .step {
+    text-align: center;
+    padding: 0 1rem;
+  }
+  .step-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    color: rgba(0,229,255,0.15);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .step-icon { font-size: 1.8rem; margin-bottom: 0.8rem; display: block; }
+  .step-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--ice-white);
+    margin-bottom: 0.5rem;
+  }
+  .step-text { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+
+  /* ── CTA BANNER ── */
+  .cta-banner {
+    background: linear-gradient(135deg, #0A1628, #0D2040);
+    border-top: 1px solid var(--frost-border);
+    border-bottom: 1px solid var(--frost-border);
+    padding: 5rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,229,255,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cta-banner h2 { margin-bottom: 0.8rem; font-size: clamp(2rem, 5vw, 3.5rem); }
+  .cta-banner p { color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem; }
+  .cta-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+  .contact-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    background: var(--panel);
+    border: 1px solid var(--frost-border);
+    padding: 0.5rem 1rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #020810;
+    border-top: 1px solid rgba(0,229,255,0.1);
+    padding: 2rem;
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    color: var(--cyber-cyan);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+  .footer-text {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+  }
+  .footer-line {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+  .footer-line a {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .footer-line a:hover { color: var(--cyber-cyan); }
+
+  /* ── TICKER ── */
+  .ticker {
+    background: var(--cyber-cyan);
+    overflow: hidden;
+    height: 36px;
+    display: flex;
+    align-items: center;
+  }
+  .ticker-track {
+    display: flex;
+    gap: 3rem;
+    animation: ticker 28s linear infinite;
+    white-space: nowrap;
+  }
+  .ticker-item {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--deep-frost);
+    font-weight: 700;
+  }
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--cyber-cyan), transparent);
+    opacity: 0.2;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .hero-content { grid-template-columns: 1fr; gap: 2rem; }
+    nav { display: none; }
+    .products-grid { grid-template-columns: 1fr; }
+    .cat-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+<!-- TICKER -->
+<div class="ticker">
+<div class="ticker-track">
+<span class="ticker-item">❄ Entrega Imediata</span>
+<span class="ticker-item">🔒 Pagamento Seguro</span>
+<span class="ticker-item">⚡ Ativação Instantânea</span>
+<span class="ticker-item">🛡 Suporte 24/7</span>
+<span class="ticker-item">💎 Produtos Originais</span>
+<span class="ticker-item">❄ Entrega Imediata</span>
+<span class="ticker-item">🔒 Pagamento Seguro</span>
+<span class="ticker-item">⚡ Ativação Instantânea</span>
+<span class="ticker-item">🛡 Suporte 24/7</span>
+<span class="ticker-item">💎 Produtos Originais</span>
+</div>
+</div>
+<!-- HEADER -->
+<header>
+<div class="header-inner">
+<div class="logo">❄ ICE <span>VENDAS</span></div>
+<nav>
+<a href="#produtos">Produtos</a>
+<a href="#categorias">Categorias</a>
+<a href="#como-comprar">Como Comprar</a>
+<a href="#contato">Contato</a>
+</nav>
+<a class="header-cta" href="#contato">Comprar Agora</a>
+</div>
+</header>
+<!-- HERO -->
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-grid"></div>
+<div class="hero-content">
+<div>
+<div class="eyebrow">Tech &amp; Cyber Security Store</div>
+<h1>SOFTWARE<br/><span class="accent">PREMIUM</span><br/>SEM FRONTEIRAS</h1>
+<p class="hero-desc">
+        Jogos, ferramentas de segurança, sistemas operacionais e programas licenciados. 
+        Entrega imediata, preços competitivos e suporte especializado.
+      </p>
+<div class="hero-actions">
+<a class="btn-primary" href="#produtos">Ver Catálogo</a>
+<a class="btn-outline" href="#contato">Falar com Especialista</a>
+</div>
+</div>
+<div class="hero-panel">
+<div class="panel-title">// STATUS DO SISTEMA</div>
+<div class="stat-row">
+<span class="stat-label">Produtos disponíveis</span>
+<span class="stat-val">200+</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">Clientes satisfeitos</span>
+<span class="stat-val gold">1.400+</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">Tempo médio de entrega</span>
+<span class="stat-val green">&lt; 5 MIN</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">Taxa de satisfação</span>
+<span class="stat-val">99.7%</span>
+</div>
+<div class="stat-row">
+<span class="stat-label">Suporte ativo</span>
+<span class="stat-val green">24/7</span>
+</div>
+<div class="trust-badge">
+<div class="trust-dot"></div>
+        Loja online e segura — transações protegidas por criptografia
+      </div>
+</div>
+</div>
+</section>
+<div class="ticker" style="background: var(--panel-2);">
+<div class="ticker-track" style="animation-duration: 35s;">
+<span class="ticker-item" style="color: var(--cyber-cyan);">Windows 10 Pro</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">Windows 11 Pro</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">ISO Windows 10/11</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">Bot WhatsApp</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">Bot Telegram</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">Otimização PC</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">FPS Boost Gamer</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">Office 365</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">Adobe Suite</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">Canva Pro</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">ChatGPT Plus</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">Spotify Premium</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">Minecraft Java</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">VPN Premium</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">Kaspersky Total</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">Curso Hacking</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">Windows 10 Pro</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">Windows 11 Pro</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">ISO Windows 10/11</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">Bot WhatsApp</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">Bot Telegram</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">Otimização PC</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">FPS Boost Gamer</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">Office 365</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">Adobe Suite</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">Canva Pro</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">ChatGPT Plus</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">Spotify Premium</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">Minecraft Java</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">VPN Premium</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">Kaspersky Total</span>
+<span class="ticker-item" style="color: var(--cyber-cyan);">Curso Hacking</span>
+</div>
+</div>
+<!-- CATEGORIES -->
+<section class="categories" id="categorias">
+<div class="section-inner">
+<div class="section-label">// Navegue por categoria</div>
+<h2>NOSSO CATÁLOGO</h2>
+<p class="section-desc">Selecione a categoria desejada e encontre o produto certo para você.</p>
+<div class="cat-grid">
+<div class="cat-card active">
+<span class="cat-icon">🎮</span>
+<div class="cat-name">Jogos</div>
+<div class="cat-count">60+ produtos</div>
+</div>
+<div class="cat-card">
+<span class="cat-icon">🛡</span>
+<div class="cat-name">Cyber Security</div>
+<div class="cat-count">45+ produtos</div>
+</div>
+<div class="cat-card">
+<span class="cat-icon">🪟</span>
+<div class="cat-name">Sistemas OS</div>
+<div class="cat-count">20+ produtos</div>
+</div>
+<div class="cat-card">
+<span class="cat-icon">📦</span>
+<div class="cat-name">Programas</div>
+<div class="cat-count">50+ produtos</div>
+</div>
+<div class="cat-card">
+<span class="cat-icon">🔑</span>
+<div class="cat-name">Licenças</div>
+<div class="cat-count">30+ produtos</div>
+</div>
+<div class="cat-card">
+<span class="cat-icon">🌐</span>
+<div class="cat-name">VPN &amp; Privacidade</div>
+<div class="cat-count">15+ produtos</div>
+</div>
+<div class="cat-card">
+<span class="cat-icon">🤖</span>
+<div class="cat-name">Bots &amp; Automação</div>
+<div class="cat-count">10+ produtos</div>
+</div>
+<div class="cat-card">
+<span class="cat-icon">⚡</span>
+<div class="cat-name">Otimização PC</div>
+<div class="cat-count">15+ produtos</div>
+</div>
+<div class="cat-card">
+<span class="cat-icon">🎨</span>
+<div class="cat-name">Design &amp; Edição</div>
+<div class="cat-count">20+ produtos</div>
+</div>
+<div class="cat-card">
+<span class="cat-icon">📱</span>
+<div class="cat-name">Apps Mobile</div>
+<div class="cat-count">12+ produtos</div>
+</div>
+<div class="cat-card">
+<span class="cat-icon">🎵</span>
+<div class="cat-name">Áudio &amp; Música</div>
+<div class="cat-count">8+ produtos</div>
+</div>
+<div class="cat-card">
+<span class="cat-icon">📚</span>
+<div class="cat-name">Cursos &amp; Ebooks</div>
+<div class="cat-count">25+ produtos</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PRODUCTS -->
+<section class="products" id="produtos">
+<div class="section-inner">
+<div class="section-label">// Mais vendidos</div>
+<h2>PRODUTOS EM DESTAQUE</h2>
+<p class="section-desc">Os itens mais procurados na nossa loja, com entrega instantânea por e-mail ou WhatsApp.</p>
+<div class="products-grid">
+<!-- PRODUCT 1 -->
+<div class="product-card">
+<span class="product-badge badge-hot">HOT</span>
+<div class="product-thumb thumb-os">🪟</div>
+<div class="product-body">
+<div class="product-category">Sistema Operacional</div>
+<div class="product-name">Windows 11 Pro — Chave Original</div>
+<div class="product-desc">Licença vitalícia, ativação imediata. Compatível com todos os PCs. Suporte Microsoft incluso.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 280,00</div>
+<div class="price-new">R$ 59,90</div>
+</div>
+<button class="btn-buy" onclick="openCheckout('Windows 11 Pro — Chave Original', 'R$ 59,90', '59.90')">Comprar</button>
+</div>
+</div>
+</div>
+<!-- PRODUCT 2 -->
+<!-- PRODUCT 3 -->
+<!-- PRODUCT 4 -->
+<!-- PRODUCT 5 -->
+<!-- PRODUCT 6 -->
+<div class="product-card">
+<span class="product-badge badge-new">NEW</span>
+<div class="product-thumb thumb-cyber">🔍</div>
+<div class="product-body">
+<div class="product-category">Cyber Security</div>
+<div class="product-name">Nmap + Metasploit Pack</div>
+<div class="product-desc">Bundle completo de ferramentas para análise de rede, varredura de vulnerabilidades e testes de intrusão.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 300,00</div>
+<div class="price-new">R$ 99,90</div>
+</div>
+<button class="btn-buy" onclick="openCheckout('Nmap + Metasploit Pack', 'R$ 99,90', '99.90')">Comprar</button>
+</div>
+</div>
+</div>
+<!-- PRODUCT 7 -->
+<!-- PRODUCT 8 -->
+<!-- PRODUCT 9 -->
+<div class="product-card">
+<div class="product-thumb thumb-os">🐧</div>
+<div class="product-body">
+<div class="product-category">Sistema Operacional</div>
+<div class="product-name">Kali Linux Pro — Curso + Ferramentas</div>
+<div class="product-desc">Acesso ao pack completo de ferramentas Kali Linux com guia de instalação e curso de introdução ao pentest.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 250,00</div>
+<div class="price-new">R$ 59,90</div>
+</div>
+<button class="btn-buy" onclick="openCheckout('Kali Linux Pro — Curso + Ferramentas', 'R$ 59,90', '59.90')">Comprar</button>
+</div>
+</div>
+</div>
+<!-- WINDOWS 10 -->
+<div class="product-card">
+<span class="product-badge badge-hot">HOT</span>
+<div class="product-thumb thumb-os">🪟</div>
+<div class="product-body">
+<div class="product-category">Sistema Operacional</div>
+<div class="product-name">Windows 10 Pro — Chave Original Vitalícia</div>
+<div class="product-desc">Licença original Windows 10 Pro 32/64 bits. Ativação imediata, suporte Microsoft incluso. Funciona em qualquer PC.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 220,00</div>
+<div class="price-new">R$ 39,90</div>
+</div>
+<button class="btn-buy" onclick="openCheckout('Windows 10 Pro — Chave Original Vitalícia', 'R$ 39,90', '39.90')">Comprar</button>
+</div>
+</div>
+</div>
+<!-- WINDOWS 10 HOME -->
+<div class="product-card">
+<div class="product-thumb thumb-os">🪟</div>
+<div class="product-body">
+<div class="product-category">Sistema Operacional</div>
+<div class="product-name">Windows 10 Home — Chave Original</div>
+<div class="product-desc">Versão Home ideal para uso doméstico. Ativação rápida por chave digital. Atualizações automáticas inclusas.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 180,00</div>
+<div class="price-new">R$ 29,90</div>
+</div>
+<button class="btn-buy" onclick="openCheckout('Windows 10 Home — Chave Original', 'R$ 29,90', '29.90')">Comprar</button>
+</div>
+</div>
+</div>
+<!-- WINDOWS 11 HOME -->
+<div class="product-card">
+<span class="product-badge badge-new">NEW</span>
+<div class="product-thumb thumb-os">🪟</div>
+<div class="product-body">
+<div class="product-category">Sistema Operacional</div>
+<div class="product-name">Windows 11 Home — Chave Original</div>
+<div class="product-desc">Interface moderna, integração com Xbox e Android. Ideal para notebooks e PCs domésticos. Ativação imediata.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 260,00</div>
+<div class="price-new">R$ 49,90</div>
+</div>
+<button class="btn-buy" onclick="openCheckout('Windows 11 Home — Chave Original', 'R$ 49,90', '49.90')">Comprar</button>
+</div>
+</div>
+</div>
+<!-- ISO WINDOWS 10 -->
+<div class="product-card">
+<span class="product-badge badge-top">TOP</span>
+<div class="product-thumb thumb-os">💿</div>
+<div class="product-body">
+<div class="product-category">ISO — Sistema Operacional</div>
+<div class="product-name">ISO Windows 10 Pro — Download Direto</div>
+<div class="product-desc">Arquivo ISO original do Windows 10 Pro para instalação limpa ou pendrive bootável. Instruções de instalação inclusas.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 80,00</div>
+<div class="price-new">R$ 19,90</div>
+</div>
+<button class="btn-buy" onclick="openCheckout('ISO Windows 10 Pro — Download Direto', 'R$ 19,90', '19.90')">Comprar</button>
+</div>
+</div>
+</div>
+<!-- ISO WINDOWS 11 -->
+<div class="product-card">
+<div class="product-thumb thumb-os">💿</div>
+<div class="product-body">
+<div class="product-category">ISO — Sistema Operacional</div>
+<div class="product-name">ISO Windows 11 Pro — Download Direto</div>
+<div class="product-desc">ISO original Windows 11 Pro 64 bits para formatação completa. Compatível com UEFI e Legacy. Suporte na instalação.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 80,00</div>
+<div class="price-new">R$ 19,90</div>
+</div>
+<button class="btn-buy" onclick="openCheckout('ISO Windows 11 Pro — Download Direto', 'R$ 19,90', '19.90')">Comprar</button>
+</div>
+</div>
+</div>
+<!-- BOT WHATSAPP -->
+<div class="product-card">
+<span class="product-badge badge-new">NEW</span>
+<div class="product-thumb thumb-cyber">🤖</div>
+<div class="product-body">
+<div class="product-category">Bots &amp; Automação</div>
+<div class="product-name">Bot WhatsApp — Atendimento Automático</div>
+<div class="product-desc">Bot completo para WhatsApp com menu interativo, respostas automáticas, integração com catálogo e envio de mensagens em massa.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 500,00</div>
+<div class="price-new">R$ 149,90</div>
+</div>
+<button class="btn-buy" onclick="openCheckout('Bot WhatsApp — Atendimento Automático', 'R$ 149,90', '149.90')">Comprar</button>
+</div>
+</div>
+</div>
+<!-- BOT TELEGRAM -->
+<div class="product-card">
+<div class="product-thumb thumb-cyber">🤖</div>
+<div class="product-body">
+<div class="product-category">Bots &amp; Automação</div>
+<div class="product-name">Bot Telegram — Multi Funções</div>
+<div class="product-desc">Bot Telegram com comandos personalizados, painel admin, envio automático de arquivos, links e notificações programadas.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 350,00</div>
+<div class="price-new">R$ 99,90</div>
+</div>
+<button class="btn-buy" onclick="openCheckout('Bot Telegram — Multi Funções', 'R$ 99,90', '99.90')">Comprar</button>
+</div>
+</div>
+</div>
+<!-- OTIMIZAÇÃO PC PACK -->
+<div class="product-card">
+<span class="product-badge badge-hot">HOT</span>
+<div class="product-thumb thumb-tool">⚡</div>
+<div class="product-body">
+<div class="product-category">Otimização PC</div>
+<div class="product-name">Pack Otimização PC — +60% Performance</div>
+<div class="product-desc">Scripts e programas para limpar registro, desativar processos desnecessários, otimizar RAM e SSD. PC novo em minutos.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 120,00</div>
+<div class="price-new">R$ 29,90</div>
+</div>
+<button class="btn-buy" onclick="openCheckout('Pack Otimização PC — +60% Performance', 'R$ 29,90', '29.90')">Comprar</button>
+</div>
+</div>
+</div>
+<!-- OTIMIZAÇÃO WINDOWS GAMING -->
+<div class="product-card">
+<span class="product-badge badge-top">TOP</span>
+<div class="product-thumb thumb-game">🎮</div>
+<div class="product-body">
+<div class="product-category">Otimização PC</div>
+<div class="product-name">Otimização Windows Gamer — FPS Boost</div>
+<div class="product-desc">Configurações avançadas para máximo FPS em jogos. Tweaks no registro, plano de energia ultra e driver optimizer incluso.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 150,00</div>
+<div class="price-new">R$ 39,90</div>
+</div>
+<button class="btn-buy" onclick="openCheckout('Otimização Windows Gamer — FPS Boost', 'R$ 39,90', '39.90')">Comprar</button>
+</div>
+</div>
+</div>
+<!-- CCLEANER PRO -->
+<div class="product-card">
+<div class="product-thumb thumb-tool">🧹</div>
+<div class="product-body">
+<div class="product-category">Otimização PC</div>
+<div class="product-name">CCleaner Professional — 1 Ano</div>
+<div class="product-desc">Limpeza profunda de arquivos temporários, registro e cache. Atualizações automáticas de drivers e monitoramento em tempo real.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 200,00</div>
+<div class="price-new">R$ 34,90</div>
+</div>
+<button class="btn-buy" onclick="openCheckout('CCleaner Professional — 1 Ano', 'R$ 34,90', '34.90')">Comprar</button>
+</div>
+</div>
+</div>
+<!-- MALWAREBYTES -->
+<div class="product-card">
+<div class="product-thumb thumb-cyber">🦠</div>
+<div class="product-body">
+<div class="product-category">Segurança &amp; Antivírus</div>
+<div class="product-name">Malwarebytes Premium — 1 Ano</div>
+<div class="product-desc">Proteção contra malware, ransomware, spyware e trojans em tempo real. Remove vírus que antivírus comum não detecta.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 300,00</div>
+<div class="price-new">R$ 49,90</div>
+</div>
+<button class="btn-buy" onclick="openCheckout('Malwarebytes Premium — 1 Ano', 'R$ 49,90', '49.90')">Comprar</button>
+</div>
+</div>
+</div>
+<!-- KASPERSKY -->
+<div class="product-card">
+<span class="product-badge badge-top">TOP</span>
+<div class="product-thumb thumb-cyber">🔐</div>
+<div class="product-body">
+<div class="product-category">Segurança &amp; Antivírus</div>
+<div class="product-name">Kaspersky Total Security — 3 PCs 1 Ano</div>
+<div class="product-desc">Proteção total para até 3 dispositivos. Antivírus, firewall, VPN inclusa, gerenciador de senhas e controle parental.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 450,00</div>
+<div class="price-new">R$ 69,90</div>
+</div>
+<button class="btn-buy" onclick="openCheckout('Kaspersky Total Security — 3 PCs 1 Ano', 'R$ 69,90', '69.90')">Comprar</button>
+</div>
+</div>
+</div>
+<!-- DRIVER BOOSTER -->
+<!-- RAZER CORTEX -->
+<!-- SPOTIFY PREMIUM -->
+<div class="product-card">
+<span class="product-badge badge-hot">HOT</span>
+<div class="product-thumb thumb-tool">🎵</div>
+<div class="product-body">
+<div class="product-category">Áudio &amp; Música</div>
+<div class="product-name">Spotify Premium — 3 Meses</div>
+<div class="product-desc">Música sem anúncios, modo offline e qualidade máxima de áudio. Conta premium individual com ativação imediata.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 90,00</div>
+<div class="price-new">R$ 19,90</div>
+</div>
+<button class="btn-buy" onclick="openCheckout('Spotify Premium — 3 Meses', 'R$ 19,90', '19.90')">Comprar</button>
+</div>
+</div>
+</div>
+<!-- FL STUDIO -->
+<!-- CAPCUT PRO -->
+<!-- CANVA PRO -->
+<!-- CURSO HACKING -->
+<div class="product-card">
+<span class="product-badge badge-hot">HOT</span>
+<div class="product-thumb thumb-cyber">👨‍💻</div>
+<div class="product-body">
+<div class="product-category">Cursos &amp; Ebooks</div>
+<div class="product-name">Curso Hacking Ético Completo — 120h</div>
+<div class="product-desc">Do zero ao avançado em ethical hacking. Pentest, exploits, redes, web hacking e preparação para certificação CEH.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 800,00</div>
+<div class="price-new">R$ 79,90</div>
+</div>
+<button class="btn-buy" onclick="openCheckout('Curso Hacking Ético Completo — 120h', 'R$ 79,90', '79.90')">Comprar</button>
+</div>
+</div>
+</div>
+<!-- CURSO PROGRAMAÇÃO -->
+<div class="product-card">
+<div class="product-thumb thumb-tool">📚</div>
+<div class="product-body">
+<div class="product-category">Cursos &amp; Ebooks</div>
+<div class="product-name">Curso Programação Python — Do Zero ao Pro</div>
+<div class="product-desc">Aprenda Python completo: automações, web scraping, bots, APIs e desenvolvimento de software. Certificado incluso.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 600,00</div>
+<div class="price-new">R$ 49,90</div>
+</div>
+<a class="btn-buy" href="#contato">Comprar</a>
+</div>
+</div>
+</div>
+<!-- MINECRAFT -->
+<div class="product-card">
+<span class="product-badge badge-hot">HOT</span>
+<div class="product-thumb thumb-game">⛏️</div>
+<div class="product-body">
+<div class="product-category">Jogo — Conta Premium</div>
+<div class="product-name">Minecraft Java + Bedrock Edition</div>
+<div class="product-desc">Conta Minecraft original com acesso ao Java e Bedrock. Multijogador liberado, skin personalizada e todas as atualizações.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 199,00</div>
+<div class="price-new">R$ 59,90</div>
+</div>
+<a class="btn-buy" href="#contato">Comprar</a>
+</div>
+</div>
+</div>
+<!-- VALORANT -->
+<!-- CHATGPT PLUS -->
+<div class="product-card">
+<span class="product-badge badge-new">NEW</span>
+<div class="product-thumb thumb-cyber">🧠</div>
+<div class="product-body">
+<div class="product-category">IA &amp; Ferramentas</div>
+<div class="product-name">ChatGPT Plus — GPT-4 1 Mês</div>
+<div class="product-desc">Acesso ao ChatGPT Plus com GPT-4, geração de imagens DALL-E, análise de arquivos e navegação web. Velocidade máxima.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 120,00</div>
+<div class="price-new">R$ 39,90</div>
+</div>
+<a class="btn-buy" href="#contato">Comprar</a>
+</div>
+</div>
+</div>
+<!-- AUTOCAD -->
+<div class="product-card">
+<div class="product-thumb thumb-tool">📐</div>
+<div class="product-body">
+<div class="product-category">Programas</div>
+<div class="product-name">AutoCAD 2024 — Licença Anual</div>
+<div class="product-desc">Software profissional para projetos 2D e 3D. Ideal para engenharia, arquitetura e design industrial. Suporte na instalação.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 2.000,00</div>
+<div class="price-new">R$ 139,90</div>
+</div>
+<a class="btn-buy" href="#contato">Comprar</a>
+</div>
+</div>
+</div>
+<!-- WINRAR -->
+
+<!-- NETFLIX -->
+<div class="product-card">
+<span class="product-badge badge-hot">HOT</span>
+<div class="product-thumb thumb-tool">🎬</div>
+<div class="product-body">
+<div class="product-category">Streaming</div>
+<div class="product-name">Netflix Premium — 4K 1 Mês</div>
+<div class="product-desc">Conta Netflix plano Premium com 4K Ultra HD, 4 telas simultâneas e downloads offline. Entrega imediata.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 55,90</div>
+<div class="price-new">R$ 18,90</div>
+</div>
+<a class="btn-buy" href="#contato">Comprar</a>
+</div>
+</div>
+</div>
+<!-- DISNEY PLUS -->
+<div class="product-card">
+<div class="product-thumb thumb-tool">🏰</div>
+<div class="product-body">
+<div class="product-category">Streaming</div>
+<div class="product-name">Disney+ Premium — 1 Mês</div>
+<div class="product-desc">Acesso completo ao Disney+, Star+ e ESPN. Marvel, Star Wars, Pixar e esportes ao vivo. 4K incluso.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 45,90</div>
+<div class="price-new">R$ 16,90</div>
+</div>
+<a class="btn-buy" href="#contato">Comprar</a>
+</div>
+</div>
+</div>
+<!-- HBO MAX -->
+<div class="product-card">
+<span class="product-badge badge-new">NEW</span>
+<div class="product-thumb thumb-tool">📺</div>
+<div class="product-body">
+<div class="product-category">Streaming</div>
+<div class="product-name">Max (HBO) Premium — 1 Mês</div>
+<div class="product-desc">Séries e filmes exclusivos HBO, DC, Warner. Qualidade 4K, legendas em português e acesso em até 3 telas.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 45,90</div>
+<div class="price-new">R$ 16,90</div>
+</div>
+<a class="btn-buy" href="#contato">Comprar</a>
+</div>
+</div>
+</div>
+<!-- YOUTUBE PREMIUM -->
+<div class="product-card">
+<span class="product-badge badge-hot">HOT</span>
+<div class="product-thumb thumb-tool">▶️</div>
+<div class="product-body">
+<div class="product-category">Streaming</div>
+<div class="product-name">YouTube Premium — 3 Meses</div>
+<div class="product-desc">YouTube sem anúncios, modo picture-in-picture, downloads offline e YouTube Music incluso. Para qualquer dispositivo.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 75,00</div>
+<div class="price-new">R$ 22,90</div>
+</div>
+<a class="btn-buy" href="#contato">Comprar</a>
+</div>
+</div>
+</div>
+<!-- PRIME VIDEO -->
+<div class="product-card">
+<div class="product-thumb thumb-tool">📦</div>
+<div class="product-body">
+<div class="product-category">Streaming</div>
+<div class="product-name">Amazon Prime — 3 Meses</div>
+<div class="product-desc">Prime Video, Prime Music, frete grátis e acesso antecipado a ofertas. Tudo em uma assinatura com entrega imediata.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 60,00</div>
+<div class="price-new">R$ 19,90</div>
+</div>
+<a class="btn-buy" href="#contato">Comprar</a>
+</div>
+</div>
+</div>
+<!-- PACK STREAMING -->
+<div class="product-card">
+<span class="product-badge badge-top">TOP</span>
+<div class="product-thumb thumb-tool">🎯</div>
+<div class="product-body">
+<div class="product-category">Streaming</div>
+<div class="product-name">Pack Streaming Completo — Netflix + Disney+ + Max</div>
+<div class="product-desc">Os 3 maiores streamings juntos por um preço imbatível. Netflix 4K, Disney+ e HBO Max. Economize comprando o pack.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 150,00</div>
+<div class="price-new">R$ 44,90</div>
+</div>
+<a class="btn-buy" href="#contato">Comprar</a>
+</div>
+</div>
+</div>
+<!-- CONTA GOOGLE DRIVE 1TB -->
+<div class="product-card">
+<span class="product-badge badge-new">NEW</span>
+<div class="product-thumb thumb-tool">☁️</div>
+<div class="product-body">
+<div class="product-category">Armazenamento Cloud</div>
+<div class="product-name">Google One 2TB — 1 Ano</div>
+<div class="product-desc">2TB de armazenamento no Google Drive, Gmail e Fotos. Backup automático do celular e compartilhamento com família.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 350,00</div>
+<div class="price-new">R$ 49,90</div>
+</div>
+<a class="btn-buy" href="#contato">Comprar</a>
+</div>
+</div>
+</div>
+<!-- MICROSOFT 365 PESSOAL -->
+<div class="product-card">
+<span class="product-badge badge-hot">HOT</span>
+<div class="product-thumb thumb-tool">📊</div>
+<div class="product-body">
+<div class="product-category">Produtividade</div>
+<div class="product-name">Microsoft 365 Personal — 1 Ano</div>
+<div class="product-desc">Word, Excel, PowerPoint, Outlook e OneDrive 1TB para 1 pessoa. Sempre atualizado com os recursos mais recentes.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 399,00</div>
+<div class="price-new">R$ 59,90</div>
+</div>
+<a class="btn-buy" href="#contato">Comprar</a>
+</div>
+</div>
+</div>
+<!-- PACOTE SENHA WIFI -->
+<div class="product-card">
+<span class="product-badge badge-hot">HOT</span>
+<div class="product-thumb thumb-cyber">📶</div>
+<div class="product-body">
+<div class="product-category">Cyber Security</div>
+<div class="product-name">Pack Auditoria WiFi — Ferramentas Completas</div>
+<div class="product-desc">Kit completo para auditoria de redes WiFi: Aircrack-ng, Hashcat configurado e wordlists com mais de 10 milhões de senhas.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 180,00</div>
+<div class="price-new">R$ 49,90</div>
+</div>
+<a class="btn-buy" href="#contato">Comprar</a>
+</div>
+</div>
+</div>
+<!-- EXPRESSVPN -->
+<div class="product-card">
+<span class="product-badge badge-top">TOP</span>
+<div class="product-thumb thumb-cyber">🔒</div>
+<div class="product-body">
+<div class="product-category">VPN &amp; Privacidade</div>
+<div class="product-name">ExpressVPN Premium — 1 Ano</div>
+<div class="product-desc">VPN ultra rápida com servidores em 94 países. Zero logs, kill switch automático e suporte a 5 dispositivos simultâneos.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 600,00</div>
+<div class="price-new">R$ 89,90</div>
+</div>
+<a class="btn-buy" href="#contato">Comprar</a>
+</div>
+</div>
+</div>
+<!-- CONTA ROBLOX ROBUX -->
+<div class="product-card">
+<span class="product-badge badge-hot">HOT</span>
+<div class="product-thumb thumb-game">🎮</div>
+<div class="product-body">
+<div class="product-category">Jogos</div>
+<div class="product-name">Roblox — 1.700 Robux</div>
+<div class="product-desc">1700 Robux para gastar em itens, acessórios e passes de jogo no Roblox. Entrega imediata via gift card ou recarga direta.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 60,00</div>
+<div class="price-new">R$ 29,90</div>
+</div>
+<a class="btn-buy" href="#contato">Comprar</a>
+</div>
+</div>
+</div>
+<!-- FREE FIRE DIAMANTES -->
+<div class="product-card">
+<span class="product-badge badge-hot">HOT</span>
+<div class="product-thumb thumb-game">💎</div>
+<div class="product-body">
+<div class="product-category">Jogos</div>
+<div class="product-name">Free Fire — 1.080 Diamantes</div>
+<div class="product-desc">Recarga de 1080 diamantes para Free Fire. Compre skins, personagens e passes de elite. Entrega em até 5 minutos.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 50,00</div>
+<div class="price-new">R$ 24,90</div>
+</div>
+<a class="btn-buy" href="#contato">Comprar</a>
+</div>
+</div>
+</div>
+<!-- STEAM CARTÃO -->
+<div class="product-card">
+<span class="product-badge badge-new">NEW</span>
+<div class="product-thumb thumb-game">🎁</div>
+<div class="product-body">
+<div class="product-category">Jogos</div>
+<div class="product-name">Steam Gift Card — R$ 50</div>
+<div class="product-desc">Cartão presente Steam no valor de R$50 para comprar qualquer jogo ou DLC na loja Steam. Código enviado na hora.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 60,00</div>
+<div class="price-new">R$ 39,90</div>
+</div>
+<a class="btn-buy" href="#contato">Comprar</a>
+</div>
+</div>
+</div>
+<!-- XBOX GAME PASS -->
+<div class="product-card">
+<span class="product-badge badge-top">TOP</span>
+<div class="product-thumb thumb-game">🎮</div>
+<div class="product-body">
+<div class="product-category">Jogos</div>
+<div class="product-name">Xbox Game Pass Ultimate — 3 Meses</div>
+<div class="product-desc">Mais de 100 jogos no PC e Xbox, EA Play incluso, Xbox Live Gold e acesso ao cloud gaming. Novo jogo todo mês.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 120,00</div>
+<div class="price-new">R$ 49,90</div>
+</div>
+<a class="btn-buy" href="#contato">Comprar</a>
+</div>
+</div>
+</div>
+<!-- BOT INSTAGRAM -->
+<div class="product-card">
+<span class="product-badge badge-new">NEW</span>
+<div class="product-thumb thumb-cyber">📸</div>
+<div class="product-body">
+<div class="product-category">Bots &amp; Automação</div>
+<div class="product-name">Bot Instagram — Seguidores &amp; Engajamento</div>
+<div class="product-desc">Automação completa para Instagram: curtidas, comentários, seguir/deixar de seguir e DMs automáticos. Painel de controle incluso.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 300,00</div>
+<div class="price-new">R$ 79,90</div>
+</div>
+<a class="btn-buy" href="#contato">Comprar</a>
+</div>
+</div>
+</div>
+<!-- CURSO TRÁFEGO PAGO -->
+<div class="product-card">
+<span class="product-badge badge-hot">HOT</span>
+<div class="product-thumb thumb-tool">📈</div>
+<div class="product-body">
+<div class="product-category">Cursos &amp; Ebooks</div>
+<div class="product-name">Curso Tráfego Pago — Google &amp; Meta Ads</div>
+<div class="product-desc">Aprenda a criar campanhas lucrativas no Google Ads e Facebook/Instagram Ads. Do zero ao avançado com cases reais.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 700,00</div>
+<div class="price-new">R$ 59,90</div>
+</div>
+<a class="btn-buy" href="#contato">Comprar</a>
+</div>
+</div>
+</div>
+<!-- CURSO EDIÇÃO DE VIDEO -->
+<div class="product-card">
+<div class="product-thumb thumb-tool">🎬</div>
+<div class="product-body">
+<div class="product-category">Cursos &amp; Ebooks</div>
+<div class="product-name">Curso Edição de Vídeo — Premiere Pro</div>
+<div class="product-desc">Edição profissional no Adobe Premiere Pro. Cortes, transições, color grading, motion graphics e exportação para redes sociais.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 500,00</div>
+<div class="price-new">R$ 44,90</div>
+</div>
+<a class="btn-buy" href="#contato">Comprar</a>
+</div>
+</div>
+</div>
+<!-- PACK FONTES E TEMPLATES -->
+<div class="product-card">
+<div class="product-thumb thumb-tool">🖋️</div>
+<div class="product-body">
+<div class="product-category">Design &amp; Edição</div>
+<div class="product-name">Pack 5.000 Fontes + Templates Profissionais</div>
+<div class="product-desc">Mais de 5000 fontes premium e 500 templates editáveis para Photoshop, Illustrator e Canva. Entrega por link de download.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 150,00</div>
+<div class="price-new">R$ 19,90</div>
+</div>
+<a class="btn-buy" href="#contato">Comprar</a>
+</div>
+</div>
+</div>
+<!-- SENDINBLUE / EMAIL MARKETING -->
+<div class="product-card">
+<span class="product-badge badge-new">NEW</span>
+<div class="product-thumb thumb-tool">📧</div>
+<div class="product-body">
+<div class="product-category">Marketing Digital</div>
+<div class="product-name">Pack Email Marketing — 100k Disparos</div>
+<div class="product-desc">Sistema completo de email marketing com 100.000 disparos, templates prontos, automações e relatórios de abertura.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 400,00</div>
+<div class="price-new">R$ 69,90</div>
+</div>
+<a class="btn-buy" href="#contato">Comprar</a>
+</div>
+</div>
+</div>
+<!-- CONTA DUOLINGO PLUS -->
+<div class="product-card">
+<div class="product-thumb thumb-tool">🦜</div>
+<div class="product-body">
+<div class="product-category">Cursos &amp; Ebooks</div>
+<div class="product-name">Duolingo Plus — 1 Ano</div>
+<div class="product-desc">Aprenda idiomas sem anúncios, com progresso ilimitado, revisão personalizada e modo offline. Mais de 40 idiomas disponíveis.</div>
+<div class="product-footer">
+<div>
+<div class="price-old">R$ 240,00</div>
+<div class="price-new">R$ 29,90</div>
+</div>
+<a class="btn-buy" href="#contato">Comprar</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- WHY US -->
+<section class="why">
+<div class="section-inner">
+<div class="section-label">// Por que nos escolher</div>
+<h2>SEGURANÇA EM CADA TRANSAÇÃO</h2>
+<p class="section-desc">Somos especializados em software tech e cyber security. Confiabilidade e agilidade são nossa marca.</p>
+<div class="why-grid">
+<div class="why-card">
+<span class="why-icon">⚡</span>
+<div class="why-title">Entrega Instantânea</div>
+<div class="why-text">Após confirmação do pagamento, você recebe o produto em menos de 5 minutos via WhatsApp ou e-mail.</div>
+</div>
+<div class="why-card">
+<span class="why-icon">🔒</span>
+<div class="why-title">Pagamento Criptografado</div>
+<div class="why-text">Aceitamos Pix, cartão e crypto. Todas as transações são protegidas por camadas de segurança.</div>
+</div>
+<div class="why-card">
+<span class="why-icon">🛡</span>
+<div class="why-title">Garantia de Ativação</div>
+<div class="why-text">Se a chave não funcionar, substituímos imediatamente. Zero risco para o comprador.</div>
+</div>
+<div class="why-card">
+<span class="why-icon">🧠</span>
+<div class="why-title">Suporte Especializado</div>
+<div class="why-text">Nossa equipe de experts em tech e cyber security auxilia na instalação e configuração de qualquer produto.</div>
+</div>
+<div class="why-card">
+<span class="why-icon">💎</span>
+<div class="why-title">Produtos Verificados</div>
+<div class="why-text">Todos os softwares são testados antes da venda. Trabalhamos apenas com licenças legítimas e originais.</div>
+</div>
+<div class="why-card">
+<span class="why-icon">📱</span>
+<div class="why-title">Atendimento 24/7</div>
+<div class="why-text">Estamos disponíveis a qualquer hora via WhatsApp e Telegram para suporte completo pós-venda.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+<div class="section-inner">
+<div class="section-label">// O que dizem nossos clientes</div>
+<h2>AVALIAÇÕES REAIS</h2>
+<p class="section-desc">Mais de 1.400 clientes satisfeitos. Veja o que eles dizem sobre a ICE VENDAS.</p>
+<div class="testi-grid">
+<div class="testi-card">
+<div class="stars">★★★★★</div>
+<div class="testi-text">Comprei o Windows 11 Pro e recebi a chave em menos de 2 minutos. Ativou perfeitamente, suporte top demais. Recomendo a todos!</div>
+<div class="testi-author">
+<div class="testi-avatar">LF</div>
+<div>
+<div class="testi-name">Lucas F.</div>
+<div class="testi-role">Cliente verificado</div>
+</div>
+</div>
+</div>
+<div class="testi-card">
+<div class="stars">★★★★★</div>
+<div class="testi-text">Comprei o Burp Suite Pro e foi incrível. Além do software, recebi dicas de configuração. A equipe entende muito de cyber security!</div>
+<div class="testi-author">
+<div class="testi-avatar">AM</div>
+<div>
+<div class="testi-name">Ana M.</div>
+<div class="testi-role">Analista de Segurança</div>
+</div>
+</div>
+</div>
+<div class="testi-card">
+<div class="stars">★★★★★</div>
+<div class="testi-text">Já comprei mais de 10 vezes. Sempre rápido, produto funcionando e preço justo. A ICE VENDAS é minha loja de confiança para tech.</div>
+<div class="testi-author">
+<div class="testi-avatar">RB</div>
+<div>
+<div class="testi-name">Rafael B.</div>
+<div class="testi-role">Dev &amp; Gamer</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- HOW TO BUY -->
+<section class="how" id="como-comprar">
+<div class="section-inner">
+<div class="section-label">// Processo simples</div>
+<h2>COMO COMPRAR</h2>
+<p class="section-desc">Em 4 passos simples você recebe seu produto com segurança e rapidez.</p>
+<div class="steps">
+<div class="step">
+<div class="step-num">01</div>
+<span class="step-icon">🔍</span>
+<div class="step-title">Escolha o Produto</div>
+<div class="step-text">Navegue pelo catálogo e selecione o software ou jogo que deseja adquirir.</div>
+</div>
+<div class="step">
+<div class="step-num">02</div>
+<span class="step-icon">💬</span>
+<div class="step-title">Entre em Contato</div>
+<div class="step-text">Fale conosco via WhatsApp ou Telegram informando o produto escolhido.</div>
+</div>
+<div class="step">
+<div class="step-num">03</div>
+<span class="step-icon">💳</span>
+<div class="step-title">Realize o Pagamento</div>
+<div class="step-text">Pague via Pix, cartão de crédito ou criptomoeda. Rápido e seguro.</div>
+</div>
+<div class="step">
+<div class="step-num">04</div>
+<span class="step-icon">📦</span>
+<div class="step-title">Receba Imediatamente</div>
+<div class="step-text">Entregamos a chave ou arquivo em até 5 minutos. Suporte na ativação incluso.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA BANNER -->
+<section class="cta-banner" id="contato">
+<div style="position:relative;z-index:2;">
+<div class="section-label" style="justify-content:center; display:flex;">// Entre em contato agora</div>
+<h2>PRONTO PARA <span style="color:var(--cyber-cyan)">COMEÇAR?</span></h2>
+<p>Nossa equipe está online agora. Fale com a gente e receba seu produto em minutos.</p>
+<a class="btn-primary" href="https://wa.me/5511945153146" style="display:inline-block; margin-bottom:1.5rem;">
+      📲 Falar no WhatsApp
+    </a>
+<div class="cta-contact">
+<div class="contact-chip">📱 WhatsApp: (11) 94515-3146</div>
+<div class="contact-chip">📱 WhatsApp: (11) 94515-3146</div>
+<div class="contact-chip">📧 Instagram: @gh_cyber00</div>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer>
+<div class="footer-logo">❄ ICE VENDAS | TECH &amp; CYBER SECURITY</div>
+<div class="footer-text">© 2024 ICE VENDAS — Todos os direitos reservados</div>
+<div class="footer-line">
+<a href="#">Política de Privacidade</a>
+<a href="#">Termos de Serviço</a>
+<a href="#">Garantia</a>
+<a href="#contato">Suporte</a>
+</div>
+</footer>
+<script>
+  // Category filter interaction
+  document.querySelectorAll('.cat-card').forEach(card => {
+    card.addEventListener('click', function() {
+      document.querySelectorAll('.cat-card').forEach(c => c.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  // Subtle fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.product-card, .why-card, .testi-card, .step').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+
+<!-- ══════════════════════════════════════════════════════
+     SISTEMA DE PAGAMENTO — ICE VENDAS
+══════════════════════════════════════════════════════ -->
+<style>
+  /* ── OVERLAY ── */
+  .checkout-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 13, 26, 0.92);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    backdrop-filter: blur(6px);
+  }
+  .checkout-overlay.active { display: flex; }
+
+  /* ── MODAL ── */
+  .checkout-modal {
+    background: var(--panel);
+    border: 1px solid var(--frost-border);
+    width: 100%;
+    max-width: 520px;
+    max-height: 92vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 0 60px rgba(0, 229, 255, 0.12);
+    scrollbar-width: thin;
+    scrollbar-color: var(--cyber-cyan) transparent;
+  }
+  .checkout-modal::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--cyber-cyan), transparent);
+  }
+
+  /* ── HEADER ── */
+  .ck-header {
+    padding: 1.4rem 1.6rem 1rem;
+    border-bottom: 1px solid var(--frost-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .ck-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.08em;
+    color: var(--cyber-cyan);
+  }
+  .ck-close {
+    background: none;
+    border: 1px solid var(--frost-border);
+    color: var(--text-muted);
+    width: 30px; height: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+  }
+  .ck-close:hover { border-color: var(--danger); color: var(--danger); }
+
+  /* ── PRODUCT SUMMARY ── */
+  .ck-product {
+    padding: 1rem 1.6rem;
+    background: var(--panel-2);
+    border-bottom: 1px solid var(--frost-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .ck-product-name {
+    font-size: 0.88rem;
+    color: var(--ice-white);
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .ck-product-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    color: var(--cyber-cyan);
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── STEPS ── */
+  .ck-steps {
+    display: flex;
+    border-bottom: 1px solid var(--frost-border);
+  }
+  .ck-step-tab {
+    flex: 1;
+    padding: 0.7rem 0.5rem;
+    text-align: center;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 2px solid transparent;
+    position: relative;
+  }
+  .ck-step-tab.done { color: var(--cyber-cyan); }
+  .ck-step-tab.done::after { content: ' ✓'; }
+  .ck-step-tab.active {
+    color: var(--cyber-cyan);
+    border-bottom-color: var(--cyber-cyan);
+  }
+
+  /* ── BODY ── */
+  .ck-body { padding: 1.4rem 1.6rem; }
+
+  /* ── PAYMENT METHOD SELECTOR ── */
+  .ck-methods {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.7rem;
+    margin-bottom: 1.4rem;
+  }
+  .ck-method {
+    border: 1px solid var(--frost-border);
+    background: var(--mid-dark);
+    padding: 0.9rem 0.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .ck-method:hover { border-color: var(--cyber-cyan); }
+  .ck-method.selected {
+    border-color: var(--cyber-cyan);
+    background: rgba(0,229,255,0.06);
+  }
+  .ck-method-icon { font-size: 1.5rem; display: block; margin-bottom: 0.35rem; }
+  .ck-method-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .ck-method.selected .ck-method-label { color: var(--cyber-cyan); }
+
+  /* ── FORM ── */
+  .ck-field { margin-bottom: 1rem; }
+  .ck-label {
+    display: block;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+  }
+  .ck-input {
+    width: 100%;
+    background: var(--mid-dark);
+    border: 1px solid var(--frost-border);
+    color: var(--text-main);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    padding: 0.65rem 0.9rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .ck-input:focus { border-color: var(--cyber-cyan); }
+  .ck-input.invalid { border-color: var(--danger); }
+  .ck-input::placeholder { color: rgba(122,168,204,0.4); }
+
+  .ck-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+
+  /* ── CARD VISUAL ── */
+  .card-visual {
+    background: linear-gradient(135deg, #0D47A1, #050D1A);
+    border: 1px solid rgba(0,229,255,0.3);
+    border-radius: 4px;
+    padding: 1.2rem 1.4rem;
+    margin-bottom: 1.2rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 110px;
+  }
+  .card-visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(0,229,255,0.02) 20px, rgba(0,229,255,0.02) 21px);
+  }
+  .card-chip { font-size: 1.4rem; margin-bottom: 0.6rem; display: block; }
+  .card-number-display {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.1rem;
+    color: var(--ice-white);
+    letter-spacing: 0.2em;
+    margin-bottom: 0.8rem;
+  }
+  .card-bottom { display: flex; justify-content: space-between; align-items: flex-end; }
+  .card-holder-display, .card-expiry-display {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--ice-blue);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .card-brand { font-size: 1.4rem; }
+
+  /* ── PIX DISPLAY ── */
+  .pix-box {
+    background: var(--mid-dark);
+    border: 1px solid var(--frost-border);
+    padding: 1.4rem;
+    text-align: center;
+    margin-bottom: 1.2rem;
+  }
+  .pix-qr {
+    width: 140px; height: 140px;
+    margin: 0 auto 1rem;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    position: relative;
+  }
+  .pix-qr-inner {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    width: 126px;
+    height: 126px;
+    padding: 4px;
+  }
+  .pix-key-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+  }
+  .pix-key {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--cyber-cyan);
+    word-break: break-all;
+    background: rgba(0,229,255,0.06);
+    padding: 0.5rem 0.8rem;
+    margin-bottom: 0.8rem;
+    cursor: pointer;
+    border: 1px solid rgba(0,229,255,0.2);
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .pix-key:hover { background: rgba(0,229,255,0.12); }
+  .pix-amount {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: var(--cyber-cyan);
+    letter-spacing: 0.05em;
+  }
+  .pix-instruction {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-top: 0.6rem;
+  }
+  .pix-timer {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--gold);
+    margin-top: 0.6rem;
+  }
+
+  /* ── WHATSAPP BOX ── */
+  .whats-box {
+    background: var(--mid-dark);
+    border: 1px solid rgba(37, 211, 102, 0.3);
+    padding: 1.4rem;
+    text-align: center;
+    margin-bottom: 1.2rem;
+  }
+  .whats-icon { font-size: 3rem; margin-bottom: 0.6rem; display: block; }
+  .whats-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  .whats-number {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem;
+    color: #25D366;
+    margin-bottom: 1rem;
+  }
+
+  /* ── BUTTONS ── */
+  .ck-btn-primary {
+    width: 100%;
+    background: var(--cyber-cyan);
+    color: var(--deep-frost);
+    border: none;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.9rem;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.2s;
+    margin-top: 0.5rem;
+  }
+  .ck-btn-primary:hover { filter: brightness(1.1); box-shadow: 0 0 20px rgba(0,229,255,0.4); }
+  .ck-btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  .ck-btn-whats {
+    width: 100%;
+    background: #25D366;
+    color: #fff;
+    border: none;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.9rem;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+  }
+  .ck-btn-whats:hover { background: #20b858; }
+
+  .ck-btn-ghost {
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--frost-border);
+    color: var(--text-muted);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.65rem;
+    cursor: pointer;
+    margin-top: 0.7rem;
+    transition: all 0.2s;
+  }
+  .ck-btn-ghost:hover { border-color: var(--text-muted); color: var(--ice-white); }
+
+  /* ── SUCCESS ── */
+  .ck-success {
+    padding: 2rem 1.6rem;
+    text-align: center;
+  }
+  .success-icon { font-size: 3.5rem; display: block; margin-bottom: 1rem; }
+  .success-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    color: var(--cyber-cyan);
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+  }
+  .success-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+  }
+
+  /* ── ERROR MSG ── */
+  .ck-error {
+    font-size: 0.75rem;
+    color: var(--danger);
+    font-family: 'Share Tech Mono', monospace;
+    margin-top: 0.25rem;
+    display: none;
+  }
+
+  /* ── TRUST BADGES ── */
+  .ck-trust {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    padding: 0.8rem 1.6rem;
+    border-top: 1px solid var(--frost-border);
+    flex-wrap: wrap;
+  }
+  .trust-badge {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  /* ── COPY TOAST ── */
+  .copy-toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: var(--cyber-cyan);
+    color: var(--deep-frost);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    padding: 0.6rem 1.2rem;
+    z-index: 99999;
+    transition: transform 0.3s ease;
+    pointer-events: none;
+  }
+  .copy-toast.show { transform: translateX(-50%) translateY(0); }
+
+  @media (max-width: 480px) {
+    .ck-methods { grid-template-columns: repeat(3, 1fr); }
+    .card-number-display { font-size: 0.9rem; }
+  }
+</style>
+
+<!-- ══ MODAL HTML ══ -->
+<div class="checkout-overlay" id="checkoutOverlay" onclick="handleOverlayClick(event)">
+  <div class="checkout-modal" id="checkoutModal">
+
+    <!-- Header -->
+    <div class="ck-header">
+      <div class="ck-title">❄ CHECKOUT</div>
+      <button class="ck-close" onclick="closeCheckout()">✕</button>
+    </div>
+
+    <!-- Product Summary -->
+    <div class="ck-product">
+      <div class="ck-product-name" id="ck-product-name">—</div>
+      <div class="ck-product-price" id="ck-product-price">—</div>
+    </div>
+
+    <!-- Step Tabs -->
+    <div class="ck-steps">
+      <div class="ck-step-tab active" id="tab-1">1. Pagamento</div>
+      <div class="ck-step-tab" id="tab-2">2. Dados</div>
+      <div class="ck-step-tab" id="tab-3">3. Confirmar</div>
+    </div>
+
+    <!-- STEP 1: Método -->
+    <div id="step-1">
+      <div class="ck-body">
+        <div class="ck-label" style="margin-bottom: 0.8rem;">Selecione a forma de pagamento</div>
+        <div class="ck-methods">
+          <div class="ck-method selected" id="method-pix" onclick="selectMethod('pix')">
+            <span class="ck-method-icon">⬡</span>
+            <span class="ck-method-label">PIX</span>
+          </div>
+          <div class="ck-method" id="method-card" onclick="selectMethod('card')">
+            <span class="ck-method-icon">💳</span>
+            <span class="ck-method-label">Cartão</span>
+          </div>
+          <div class="ck-method" id="method-whats" onclick="selectMethod('whats')">
+            <span class="ck-method-icon">💬</span>
+            <span class="ck-method-label">WhatsApp</span>
+          </div>
+        </div>
+
+        <!-- PIX Info -->
+        <div id="info-pix" style="font-size:0.82rem; color:var(--text-muted); line-height:1.6; background:rgba(0,229,255,0.04); border:1px solid var(--frost-border); padding:0.9rem; margin-bottom:1rem;">
+          ⚡ <strong style="color:var(--ice-white)">PIX — Aprovação imediata.</strong> Após confirmar, exibiremos a chave PIX e o QR Code. O produto é entregue por e-mail assim que o pagamento for identificado.
+        </div>
+        <div id="info-card" style="display:none; font-size:0.82rem; color:var(--text-muted); line-height:1.6; background:rgba(0,229,255,0.04); border:1px solid var(--frost-border); padding:0.9rem; margin-bottom:1rem;">
+          🔒 <strong style="color:var(--ice-white)">Cartão de Crédito/Débito.</strong> Preencha seus dados no próximo passo. Parcelamento em até 3x sem juros. Pagamento processado com segurança.
+        </div>
+        <div id="info-whats" style="display:none; font-size:0.82rem; color:var(--text-muted); line-height:1.6; background:rgba(37,211,102,0.06); border:1px solid rgba(37,211,102,0.25); padding:0.9rem; margin-bottom:1rem;">
+          📱 <strong style="color:var(--ice-white)">Pagamento via WhatsApp.</strong> Fale diretamente com um atendente. Aceitamos PIX, cartão e transferência. Produto entregue na hora.
+        </div>
+
+        <button class="ck-btn-primary" onclick="goStep2()">CONTINUAR →</button>
+      </div>
+    </div>
+
+    <!-- STEP 2: Dados -->
+    <div id="step-2" style="display:none;">
+      <div class="ck-body">
+
+        <!-- PIX Form -->
+        <div id="form-pix">
+          <div class="ck-field">
+            <label class="ck-label">Nome completo</label>
+            <input class="ck-input" id="pix-name" type="text" placeholder="Seu nome" autocomplete="name">
+          </div>
+          <div class="ck-field">
+            <label class="ck-label">E-mail para entrega do produto</label>
+            <input class="ck-input" id="pix-email" type="email" placeholder="seuemail@gmail.com" autocomplete="email">
+            <span class="ck-error" id="pix-email-err">E-mail inválido</span>
+          </div>
+          <div class="ck-field">
+            <label class="ck-label">WhatsApp (opcional — para suporte)</label>
+            <input class="ck-input" id="pix-phone" type="tel" placeholder="(11) 99999-9999" autocomplete="tel">
+          </div>
+          <button class="ck-btn-primary" onclick="goStep3()">PROSSEGUIR →</button>
+          <button class="ck-btn-ghost" onclick="goStep1()">← Voltar</button>
+        </div>
+
+        <!-- Card Form -->
+        <div id="form-card" style="display:none;">
+          <!-- Card Visual -->
+          <div class="card-visual">
+            <span class="card-chip">▣</span>
+            <div class="card-number-display" id="cv-number">•••• •••• •••• ••••</div>
+            <div class="card-bottom">
+              <div>
+                <div style="font-family:'Share Tech Mono',monospace;font-size:0.55rem;color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:2px;">Titular</div>
+                <div class="card-holder-display" id="cv-name">SEU NOME</div>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-family:'Share Tech Mono',monospace;font-size:0.55rem;color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:2px;">Validade</div>
+                <div class="card-expiry-display" id="cv-expiry">MM/AA</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ck-field">
+            <label class="ck-label">E-mail para entrega</label>
+            <input class="ck-input" id="card-email" type="email" placeholder="seuemail@gmail.com" autocomplete="email">
+            <span class="ck-error" id="card-email-err">E-mail inválido</span>
+          </div>
+          <div class="ck-field">
+            <label class="ck-label">Nome no cartão</label>
+            <input class="ck-input" id="card-name" type="text" placeholder="NOME COMO NO CARTÃO" style="text-transform:uppercase;" autocomplete="cc-name" oninput="document.getElementById('cv-name').textContent=this.value.toUpperCase()||'SEU NOME'">
+          </div>
+          <div class="ck-field">
+            <label class="ck-label">Número do cartão</label>
+            <input class="ck-input" id="card-number" type="tel" placeholder="0000 0000 0000 0000" maxlength="19" autocomplete="cc-number" oninput="formatCardNumber(this)">
+            <span class="ck-error" id="card-num-err">Número inválido</span>
+          </div>
+          <div class="ck-row">
+            <div class="ck-field">
+              <label class="ck-label">Validade</label>
+              <input class="ck-input" id="card-expiry" type="tel" placeholder="MM/AA" maxlength="5" autocomplete="cc-exp" oninput="formatExpiry(this)">
+              <span class="ck-error" id="card-exp-err">Data inválida</span>
+            </div>
+            <div class="ck-field">
+              <label class="ck-label">CVV</label>
+              <input class="ck-input" id="card-cvv" type="tel" placeholder="•••" maxlength="4" autocomplete="cc-csc">
+              <span class="ck-error" id="card-cvv-err">CVV inválido</span>
+            </div>
+          </div>
+          <div class="ck-field">
+            <label class="ck-label">CPF do titular</label>
+            <input class="ck-input" id="card-cpf" type="tel" placeholder="000.000.000-00" maxlength="14" oninput="formatCPF(this)">
+            <span class="ck-error" id="card-cpf-err">CPF inválido</span>
+          </div>
+          <button class="ck-btn-primary" onclick="goStep3()">PROSSEGUIR →</button>
+          <button class="ck-btn-ghost" onclick="goStep1()">← Voltar</button>
+        </div>
+
+        <!-- WhatsApp "form" -->
+        <div id="form-whats" style="display:none;">
+          <div class="whats-box">
+            <span class="whats-icon">📱</span>
+            <p class="whats-text">Clique abaixo para ir direto ao WhatsApp e finalizar seu pedido com um atendente. Informe o produto desejado e nossa equipe cuida do resto.</p>
+            <div class="whats-number">☎ (11) 94515-3146</div>
+          </div>
+          <a class="ck-btn-whats" id="whats-link" href="#" target="_blank" onclick="closeCheckout()">
+            💬 ABRIR WHATSAPP
+          </a>
+          <button class="ck-btn-ghost" onclick="goStep1()">← Voltar</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- STEP 3: Confirmar -->
+    <div id="step-3" style="display:none;">
+      <div class="ck-body">
+        <div style="margin-bottom:1.2rem;">
+          <div class="ck-label" style="margin-bottom:0.8rem;">Resumo do pedido</div>
+          <div style="background:var(--mid-dark);border:1px solid var(--frost-border);padding:1rem;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:0.5rem;">
+              <span style="font-size:0.82rem;color:var(--text-muted)">Produto</span>
+              <span style="font-size:0.82rem;color:var(--ice-white);text-align:right;max-width:60%;" id="summary-product">—</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:0.5rem;">
+              <span style="font-size:0.82rem;color:var(--text-muted)">Método</span>
+              <span style="font-size:0.82rem;color:var(--cyber-cyan);" id="summary-method">—</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:0.5rem;">
+              <span style="font-size:0.82rem;color:var(--text-muted)">E-mail de entrega</span>
+              <span style="font-size:0.82rem;color:var(--ice-white);" id="summary-email">—</span>
+            </div>
+            <div style="height:1px;background:var(--frost-border);margin:0.8rem 0;"></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-family:'Share Tech Mono',monospace;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted)">Total</span>
+              <span style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--cyber-cyan);letter-spacing:0.05em;" id="summary-total">—</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="ck-btn-primary" id="btn-confirm" onclick="confirmPayment()">✓ CONFIRMAR PAGAMENTO</button>
+        <button class="ck-btn-ghost" onclick="goStep2()">← Voltar</button>
+      </div>
+    </div>
+
+    <!-- STEP 4: PIX Final -->
+    <div id="step-4-pix" style="display:none;">
+      <div class="ck-body">
+        <div class="pix-box">
+          <div class="pix-amount" id="pix-final-amount">—</div>
+          <p style="font-size:0.75rem;color:var(--text-muted);margin:0.4rem 0 1rem;">Transfira o valor exato via PIX</p>
+
+          <!-- Fake QR -->
+          <div class="pix-qr">
+            <canvas id="qr-canvas" width="130" height="130"></canvas>
+          </div>
+
+          <div class="pix-key-label">Chave PIX (CNPJ)</div>
+          <div class="pix-key" onclick="copyPix()" title="Clique para copiar">
+            <span id="pix-key-val">11.222.333/0001-44</span>
+            <span style="font-size:0.7rem;opacity:0.6;">📋 copiar</span>
+          </div>
+          <div class="pix-instruction">
+            1. Abra seu app bancário e escolha PIX<br>
+            2. Cole a chave ou escaneie o QR Code<br>
+            3. Confira o valor e confirme<br>
+            4. Seu produto chegará no e-mail em até <strong style="color:var(--ice-white)">5 minutos</strong>
+          </div>
+          <div class="pix-timer" id="pix-countdown">⏱ Expira em: 15:00</div>
+        </div>
+        <button class="ck-btn-ghost" onclick="closeCheckout()">✓ JÁ PAGUEI — FECHAR</button>
+      </div>
+    </div>
+
+    <!-- STEP SUCCESS (card) -->
+    <div id="step-success" style="display:none;">
+      <div class="ck-success">
+        <span class="success-icon">✅</span>
+        <div class="success-title">PEDIDO CONFIRMADO!</div>
+        <p class="success-text">Seu pagamento foi recebido com sucesso. O produto será enviado para o e-mail cadastrado em até <strong style="color:var(--ice-white)">5 minutos</strong>.<br><br>Qualquer dúvida, fale pelo WhatsApp <strong style="color:var(--cyber-cyan)">(11) 94515-3146</strong>.</p>
+        <button class="ck-btn-primary" onclick="closeCheckout()">FECHAR</button>
+      </div>
+    </div>
+
+    <!-- Trust Badges -->
+    <div class="ck-trust">
+      <span class="trust-badge">🔒 SSL Seguro</span>
+      <span class="trust-badge">⚡ Entrega imediata</span>
+      <span class="trust-badge">🛡 Garantia 7 dias</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- COPY TOAST -->
+<div class="copy-toast" id="copyToast">✓ Chave PIX copiada!</div>
+
+<script>
+// ══ STATE ══
+let currentProduct = { name: '', price: '', priceVal: '' };
+let currentMethod = 'pix';
+let pixCountdownInterval = null;
+
+// ══ OPEN / CLOSE ══
+function openCheckout(name, price, priceVal) {
+  currentProduct = { name, price, priceVal };
+  document.getElementById('ck-product-name').textContent = name;
+  document.getElementById('ck-product-price').textContent = price;
+  goStep1();
+  document.getElementById('checkoutOverlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCheckout() {
+  document.getElementById('checkoutOverlay').classList.remove('active');
+  document.body.style.overflow = '';
+  if (pixCountdownInterval) clearInterval(pixCountdownInterval);
+}
+
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('checkoutOverlay')) closeCheckout();
+}
+
+// ESC key
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCheckout(); });
+
+// ══ METHOD SELECTION ══
+function selectMethod(method) {
+  currentMethod = method;
+  ['pix','card','whats'].forEach(m => {
+    document.getElementById('method-' + m).classList.toggle('selected', m === method);
+    document.getElementById('info-' + m).style.display = m === method ? 'block' : 'none';
+  });
+}
+
+// ══ NAVIGATION ══
+function setTab(active) {
+  for (let i = 1; i <= 3; i++) {
+    const tab = document.getElementById('tab-' + i);
+    tab.classList.remove('active','done');
+    if (i < active) tab.classList.add('done');
+    if (i === active) tab.classList.add('active');
+  }
+}
+
+function showOnly(...ids) {
+  ['step-1','step-2','step-3','step-4-pix','step-success'].forEach(id => {
+    document.getElementById(id).style.display = ids.includes(id) ? 'block' : 'none';
+  });
+}
+
+function goStep1() {
+  setTab(1);
+  showOnly('step-1');
+  selectMethod(currentMethod);
+}
+
+function goStep2() {
+  setTab(2);
+  showOnly('step-2');
+  // Show right form
+  ['pix','card','whats'].forEach(m => {
+    document.getElementById('form-' + m).style.display = m === currentMethod ? 'block' : 'none';
+  });
+  // Set WhatsApp link
+  if (currentMethod === 'whats') {
+    const msg = encodeURIComponent(`Olá! Quero comprar: ${currentProduct.name} — ${currentProduct.price}`);
+    document.getElementById('whats-link').href = `https://wa.me/5511945153146?text=${msg}`;
+  }
+}
+
+function goStep3() {
+  // Validate
+  if (!validateStep2()) return;
+
+  setTab(3);
+  showOnly('step-3');
+
+  const emailEl = currentMethod === 'pix'
+    ? document.getElementById('pix-email')
+    : document.getElementById('card-email');
+
+  const methodLabel = { pix: 'PIX', card: 'Cartão de Crédito', whats: 'WhatsApp' }[currentMethod];
+
+  document.getElementById('summary-product').textContent = currentProduct.name;
+  document.getElementById('summary-method').textContent = methodLabel;
+  document.getElementById('summary-email').textContent = emailEl ? emailEl.value : '—';
+  document.getElementById('summary-total').textContent = currentProduct.price;
+}
+
+// ══ VALIDATION ══
+function validateStep2() {
+  if (currentMethod === 'whats') return true;
+
+  let valid = true;
+
+  if (currentMethod === 'pix') {
+    const email = document.getElementById('pix-email');
+    const name = document.getElementById('pix-name');
+    const err = document.getElementById('pix-email-err');
+    if (!name.value.trim()) { name.classList.add('invalid'); valid = false; }
+    else name.classList.remove('invalid');
+    if (!isValidEmail(email.value)) { email.classList.add('invalid'); err.style.display='block'; valid = false; }
+    else { email.classList.remove('invalid'); err.style.display='none'; }
+  }
+
+  if (currentMethod === 'card') {
+    const fields = [
+      { el: 'card-email', err: 'card-email-err', check: v => isValidEmail(v), msg: 'E-mail inválido' },
+      { el: 'card-name', err: null, check: v => v.trim().length > 2 },
+      { el: 'card-number', err: 'card-num-err', check: v => v.replace(/\s/g,'').length === 16 },
+      { el: 'card-expiry', err: 'card-exp-err', check: v => /^\d{2}\/\d{2}$/.test(v) },
+      { el: 'card-cvv', err: 'card-cvv-err', check: v => v.length >= 3 },
+      { el: 'card-cpf', err: 'card-cpf-err', check: v => v.replace(/\D/g,'').length === 11 },
+    ];
+    fields.forEach(f => {
+      const el = document.getElementById(f.el);
+      const ok = f.check(el.value);
+      el.classList.toggle('invalid', !ok);
+      if (f.err) document.getElementById(f.err).style.display = ok ? 'none' : 'block';
+      if (!ok) valid = false;
+    });
+  }
+  return valid;
+}
+
+function isValidEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+// ══ INPUT FORMATTERS ══
+function formatCardNumber(input) {
+  let v = input.value.replace(/\D/g,'').substring(0,16);
+  input.value = v.replace(/(.{4})/g,'$1 ').trim();
+  const display = v.padEnd(16,'•').replace(/(.{4})/g,'$1 ').trim();
+  document.getElementById('cv-number').textContent = display;
+}
+function formatExpiry(input) {
+  let v = input.value.replace(/\D/g,'');
+  if (v.length >= 2) v = v.substring(0,2) + '/' + v.substring(2,4);
+  input.value = v;
+  document.getElementById('cv-expiry').textContent = v || 'MM/AA';
+}
+function formatCPF(input) {
+  let v = input.value.replace(/\D/g,'').substring(0,11);
+  v = v.replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d{1,2})$/,'$1-$2');
+  input.value = v;
+}
+
+// ══ CONFIRM ══
+function confirmPayment() {
+  const btn = document.getElementById('btn-confirm');
+  btn.disabled = true;
+  btn.textContent = '⟳ PROCESSANDO...';
+
+  setTimeout(() => {
+    btn.disabled = false;
+    btn.textContent = '✓ CONFIRMAR PAGAMENTO';
+    if (currentMethod === 'pix') {
+      showPixFinal();
+    } else {
+      showSuccess();
+    }
+  }, 2000);
+}
+
+function showPixFinal() {
+  showOnly('step-4-pix');
+  document.getElementById('pix-final-amount').textContent = currentProduct.price;
+  drawFakeQR();
+  startPixCountdown();
+}
+
+function showSuccess() {
+  showOnly('step-success');
+}
+
+// ══ PIX QR (decorative) ══
+function drawFakeQR() {
+  const canvas = document.getElementById('qr-canvas');
+  const ctx = canvas.getContext('2d');
+  const size = 130;
+  const cell = 5;
+  const cols = Math.floor(size / cell);
+
+  ctx.fillStyle = '#fff';
+  ctx.fillRect(0, 0, size, size);
+
+  // Seed from product name for consistency
+  let seed = 0;
+  for (let c of currentProduct.name) seed += c.charCodeAt(0);
+
+  function rand() { seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed / 0x7fffffff; }
+
+  ctx.fillStyle = '#000';
+  for (let y = 0; y < cols; y++) {
+    for (let x = 0; x < cols; x++) {
+      if (rand() > 0.55) ctx.fillRect(x * cell, y * cell, cell, cell);
+    }
+  }
+
+  // Position squares (QR corners)
+  function drawCorner(cx, cy) {
+    ctx.fillStyle = '#000';
+    ctx.fillRect(cx, cy, 7*cell, 7*cell);
+    ctx.fillStyle = '#fff';
+    ctx.fillRect(cx+cell, cy+cell, 5*cell, 5*cell);
+    ctx.fillStyle = '#000';
+    ctx.fillRect(cx+2*cell, cy+2*cell, 3*cell, 3*cell);
+  }
+  drawCorner(0, 0);
+  drawCorner(size - 7*cell, 0);
+  drawCorner(0, size - 7*cell);
+}
+
+// ══ PIX COUNTDOWN ══
+function startPixCountdown() {
+  if (pixCountdownInterval) clearInterval(pixCountdownInterval);
+  let total = 15 * 60;
+  const el = document.getElementById('pix-countdown');
+  pixCountdownInterval = setInterval(() => {
+    total--;
+    const m = String(Math.floor(total / 60)).padStart(2,'0');
+    const s = String(total % 60).padStart(2,'0');
+    el.textContent = `⏱ Expira em: ${m}:${s}`;
+    if (total <= 0) { clearInterval(pixCountdownInterval); el.textContent = '⚠ QR Code expirado — recarregue'; }
+  }, 1000);
+}
+
+// ══ COPY PIX KEY ══
+function copyPix() {
+  const key = document.getElementById('pix-key-val').textContent;
+  navigator.clipboard.writeText(key).catch(() => {});
+  const toast = document.getElementById('copyToast');
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2500);
+}
+</script>
+</body>
+</html>
