@@ -850,28 +850,215 @@
     </div>
   </div>
 </section>
-<!-- BOT DO TELEGRAM -->
-  <div class="product-card">
-        <span class="product-badge badge-new">NEW</span>
-        <div class="product-thumb thumb-game" style="font-size:4rem;">👾</div>
-        <div class="product-body">
-          <div class="product-category">BOT DO TELEGRAM</div>
-          <div class="product-name">ICE BOTS</div>
-          <div class="product-desc">BOTS para seu telegram para automatizar sua vida e deixar ela mais facil.</div>
-          <div class="product-footer">
-            <div>
-              <div class="price-old">R$ 60,00</div>
-              <div class="price-new">R$ 54,90</div>
-            </div>
-            <a href="https://wa.me/5511945153146" class="btn-buy" target="_blank">Comprar</a>
-          </div>
+<!-- =============================================
+     SEÇÃO DE VENDAS DE BOTS DO TELEGRAM
+     Cole este bloco onde quiser no seu site.
+     Troque SEU_USERNAME pelo seu @ do Telegram.
+     ============================================= -->
+ 
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+ 
+<style>
+  .ice-section {
+    background: #0d1117;
+    padding: 60px 30px;
+    font-family: 'Inter', sans-serif;
+  }
+  .ice-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 8px;
+    letter-spacing: 2px;
+  }
+  .ice-sub {
+    color: #00e5b4;
+    font-size: 15px;
+    margin: 0 0 40px;
+  }
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .card {
+    background: #111820;
+    border: 1px solid #1e2d3d;
+    border-radius: 10px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .card:hover {
+    border-color: #00e5b4;
+  }
+  .card-bg {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 8px,
+      rgba(0,229,180,0.02) 8px,
+      rgba(0,229,180,0.02) 9px
+    );
+    pointer-events: none;
+  }
+  .badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #e5004b;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 3px;
+    letter-spacing: 1px;
+  }
+  .card-icon {
+    font-size: 48px;
+    margin: 0 0 20px;
+    display: block;
+    line-height: 1;
+  }
+  .card-cat {
+    font-size: 11px;
+    font-weight: 600;
+    color: #00e5b4;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 8px;
+  }
+  .card-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 12px;
+  }
+  .card-desc {
+    font-size: 13px;
+    color: #7a8fa6;
+    line-height: 1.6;
+    margin: 0 0 24px;
+  }
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #1e2d3d;
+    padding-top: 16px;
+  }
+  .price-block .old {
+    font-size: 12px;
+    color: #4a5568;
+    text-decoration: line-through;
+    margin: 0;
+  }
+  .price-block .current {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+  }
+  .btn-buy {
+    background: transparent;
+    border: 1px solid #00e5b4;
+    color: #00e5b4;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 8px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-buy:hover {
+    background: #00e5b4;
+    color: #0d1117;
+  }
+</style>
+ 
+<section class="ice-section">
+  <h2 class="ice-title">O QUE EU VENDO</h2>
+  <p class="ice-sub">Produtos exclusivos. Fale no Telegram para adquirir.</p>
+ 
+  <div class="cards-grid">
+ 
+    <!-- CARD 1 — Bot de Telegram Profissional -->
+    <div class="card">
+      <div class="card-bg"></div>
+      <span class="badge">BOT</span>
+      <span class="card-icon">🤖</span>
+      <p class="card-cat">Automação</p>
+      <h3 class="card-title">Bot de Telegram Profissional</h3>
+      <p class="card-desc">
+        Bot automatizado para Telegram com respostas automáticas,
+        catálogo de produtos, integração com pagamento e painel de
+        controle. Ideal para lojas e negócios online.
+      </p>
+      <div class="card-footer">
+        <div class="price-block">
+          <p class="old">R$ 350,00</p>
+          <p class="current">R$ 149,90</p>
         </div>
+        <a class="btn-buy" href="https://t.me/SEU_USERNAME" target="_blank">Comprar</a>
       </div>
-
     </div>
+ 
+    <!-- CARD 2 — Bot de Vendas Automático -->
+    <div class="card">
+      <div class="card-bg"></div>
+      <span class="badge">BOT</span>
+      <span class="card-icon">⚡</span>
+      <p class="card-cat">Automação</p>
+      <h3 class="card-title">Bot de Vendas Automático</h3>
+      <p class="card-desc">
+        Bot completo para vendas no Telegram com checkout automático,
+        envio de produtos digitais, relatórios de vendas e suporte
+        a múltiplos produtos.
+      </p>
+      <div class="card-footer">
+        <div class="price-block">
+          <p class="old">R$ 500,00</p>
+          <p class="current">R$ 249,90</p>
+        </div>
+        <a class="btn-buy" href="https://t.me/SEU_USERNAME" target="_blank">Comprar</a>
+      </div>
+    </div>
+ 
+    <!-- CARD 3 — Bot Administrador de Grupos -->
+    <div class="card">
+      <div class="card-bg"></div>
+      <span class="badge">BOT</span>
+      <span class="card-icon">🛡️</span>
+      <p class="card-cat">Gestão de Grupos</p>
+      <h3 class="card-title">Bot Administrador de Grupos</h3>
+      <p class="card-desc">
+        Bot para gerenciar grupos do Telegram com anti-spam,
+        boas-vindas automáticas, moderação de conteúdo e
+        sistema de punições personalizável.
+      </p>
+      <div class="card-footer">
+        <div class="price-block">
+          <p class="old">R$ 280,00</p>
+          <p class="current">R$ 99,90</p>
+        </div>
+        <a class="btn-buy" href="https://t.me/SEU_USERNAME" target="_blank">Comprar</a>
+      </div>
+    </div>
+ 
   </div>
 </section>
-  
+
 <!-- WHY US -->
 <section class="why">
   <div class="section-inner">
